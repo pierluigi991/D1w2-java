@@ -15,21 +15,16 @@ public class Main {
             try {
                 System.out.print("KM PERCORSI: ");
                 double kmPercorsi = scanner.nextDouble();
-
                 System.out.print("LITRI CONSUMATI: ");
                 double litriCarburante = scanner.nextDouble();
-
-                if (litriCarburante == 0) {
-                    throw new ArithmeticException("DIVISIONE PER 0 NON ACCETTATA");
-                }
-
+//                if (litriCarburante == 0) {
+//                    throw new ArithmeticException("DIVISIONE PER 0 NON ACCETTATA");
+//                }
                 double kmPerLitro = kmPercorsi / litriCarburante;
-
                 logger.info( "IL CONSUMO DELLA TUA AUTO E' DI  " + kmPerLitro + " km/litro");
-
                 break;
             } catch (Exception e) {
-                logger.warn( "Errore: " + e.getMessage());
+                System.out.println(e);
                 scanner.nextLine();
             }
         }
