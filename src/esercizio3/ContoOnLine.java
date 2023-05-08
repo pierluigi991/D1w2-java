@@ -1,22 +1,29 @@
 package esercizio3;
 
 public class ContoOnLine extends ContoCorrente {
-	double maxPrelievo;
+    double maxPrelievo;
 
-	ContoOnLine(String titolare, double saldo, double maxP) {
-		super(titolare, saldo);
-		this.maxPrelievo = maxP;
-	}
+    public ContoOnLine ( String titolare, double saldo, double maxP ) {
+        super(titolare, saldo);
+        this.maxPrelievo = maxP;
+    }
 
-	void stampaSaldo() {
+    public void stampaSaldo () {
 
-		System.out.println("Titolare: " + titolare + " - Saldo: " + saldo + " - Num movimenti: " + nMovimenti
-				+ " - Massimo movimenti: " + maxMovimenti + " - Massimo prelievo possibile: " + maxPrelievo);
-	}
+        System.out.println("Titolare: " + titolare + " - Saldo: " + saldo + " - Num movimenti: " + nMovimenti
+                + " - Massimo movimenti: " + maxMovimenti + " - Massimo prelievo possibile: " + maxPrelievo);
+    }
 
-	void preleva(double x) {
-		if (x <= maxPrelievo) {
-			super.preleva(x);
-		}
-	}
+    public void preleva ( double x ) {
+        try {
+            if (x <= maxPrelievo) {
+                super.preleva(x);
+            } else {
+                throw new BancaExeption ( "Non puoi prelevare più di " + maxPrelievo);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }
