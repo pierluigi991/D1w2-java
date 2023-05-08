@@ -30,10 +30,10 @@ public class Main {
                     break;
                 }
                 if (posizione < 0 || posizione >= array.length) {
-                    throw new IllegalArgumentException("Posizione non accettata");
+                    throw new ArrayIndexOutOfBoundsException("Posizione non accettata");
                 }
                 if (valore < 1 || valore > 10) {
-                    throw new IllegalArgumentException("Valore non accettato");
+                    throw new ArrayIndexOutOfBoundsException("Valore non accettato");
                 }
                 array[posizione] = valore;
 
