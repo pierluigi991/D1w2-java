@@ -12,10 +12,10 @@ public class ContoCorrente {
 		nMovimenti = 0;
 	}
 
-	void preleva(double x) throws BancaExeption {
+	void preleva(double x) throws BancaException {
         try {
             if ( saldo - x < 0 ) {
-                throw new BancaExeption ( "il conto è in rosso" );
+                throw new BancaException ( "il conto è in rosso" );
             } else {
                 if (nMovimenti < maxMovimenti)
                     saldo = saldo - x;

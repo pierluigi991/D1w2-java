@@ -1,8 +1,8 @@
 package esercizio3;
 
-public class BancaExeption extends Exception {
+public class BancaException extends Exception {
     private String msg;
-    public BancaExeption(String str) {
+    public BancaException(String str) {
         super(str);
         this.msg = str;
     }
